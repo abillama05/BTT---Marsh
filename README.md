@@ -1,4 +1,4 @@
-# Hurricane Impacts on Shipping Lanes and Vessels
+# Hurricane Impacts on Shipping Vessels
 Marsh McLennan AI Studio Project for Break Through Tech
 
 ## Purpose
