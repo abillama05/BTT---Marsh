@@ -1,74 +1,115 @@
 # Hurricane Impacts on Shipping Lanes and Vessels
 Marsh McLennan AI Studio Project for Break Through Tech
 
-## Purpose
-Introduce your project with more than just a brief summary. This section provides a clear and comprehensive overview of the project's purpose, methods, and outcomes.
+# Purpose
 
-### Suggested Content
+This project aims to predict the impact of hurricanes on vessel traffic along the US East Coast, with a focus on understanding how hurricanes influence vessel behavior and port closures. By linking vessel routes to hurricane paths and identifying disruptions, the project provides valuable insights for supply chain resilience. The ultimate goal is to help stakeholders, such as manufacturers and retailers, plan for and mitigate the effects of hurricanes on critical cargo shipments.
 
-#### Project Overview, Objectives, and Goals
-Include a clear description of the project, its main objectives, and what you aimed to achieve. Explain the problem your project addresses and why it's important.
+---
 
-#### Methodology
-Provide details on the methods and approaches used, such as the data collection and preprocessing steps, the models and algorithms applied, and any relevant tools or libraries.
+## Project Overview, Objectives, and Goals
 
-#### Results and Key Findings
-Summarize your main results, including performance metrics like accuracy, F1 score, or AUC. Highlight any key insights or discoveries made during the project.
+The project addresses the challenge of predicting vessel behavior during hurricanes to improve visibility over the supply chain in the context of natural disasters. It aims to:
+- Link vessel routes to hurricane paths.
+- Identify behavioral patterns in vessels affected by hurricanes.
+- Develop a machine learning model to predict vessel movements during hurricanes, enhancing preparedness and minimizing disruptions.
 
-#### Visualizations
-Include visual representations of your results, such as training/validation curves, confusion matrices, or example predictions. This helps convey the effectiveness and accuracy of your approach.
+The project is critical because disruptions in shipping caused by hurricanes can significantly impact operations and profits in interconnected value chains.
 
-#### Potential Next Steps
-Outline what could be done to improve or extend the project. This could include additional experiments, fine-tuning, or deployment plans. Discuss future directions or applications of your work.
+---
+
+## Methodology
+
+### Data Collection and Preparation
+- **Hurricane Data:** HURDAT2 dataset of tropical cyclones, including coordinates, wind speeds, and pressure every six hours.
+- **Vessel Data:** AIS dataset recording vessel locations, compass bearings, dimensions, and types.
+- Data cleaning involved merging datasets by timestamps, removing duplicates, and creating labels like `PathChange` to indicate vessel status.
+
+### Modeling and Algorithms
+- Several algorithms were tested, including Random Forest, Logistic Regression, SVM, and K-Nearest Neighbor.
+- The target variable was `PathChange`, with a stratified train-test split ensuring balanced representation.
+- A Random Forest model was fine-tuned using Grid Search to optimize hyperparameters like `n_estimators`, `max_depth`, and `min_samples_split`.
+
+---
+
+## Results and Key Findings
+
+- **Insights:** Hurricanes weaken as they approach the East Coast. Larger vessels typically deviate about 10 degrees daily, with significant deviations often indicating hurricanes.
+- **Model Performance:** The Random Forest model outperformed other algorithms, achieving the highest accuracy. Precision, recall, and confusion matrices were used for evaluation.
+- **Key Discovery:** Vessels are significantly more likely to veer off course during hurricanes, highlighting the importance of predictive modeling in disaster scenarios.
+
+---
+
+## Visualizations
+
+Visual representations included:
+- Confusion matrices for model evaluation.
+- ROC curves for the Random Forest model.
+
+![Screenshot 2024-11-24 at 8 07 12 PM](https://github.com/user-attachments/assets/ab7f8b26-a179-4e3e-97c6-c29b0e0c6492)
+
+---
+
+## Potential Next Steps
+
+- Fine-tuning the Random Forest model through hyperparameter optimization.
+- Experimenting with feature selection to improve predictive accuracy.
+- Saving the trained model using Pickle for deployment and further analysis.
 
 ---
 
 # Table of Contents
-Purpose: Helps users quickly navigate to different sections of the README.
-
-### Suggested Content
-Hyperlinks to sections like:
 - [Installation](#installation)
 - [Usage](#usage)
-- [License](#license)
+- [Tech Stack](#technology)
 - [Credits and Acknowledgments](#credits-and-acknowledgments)
 
 ---
 
 # Installation
 
-## Purpose
-Instructions on how to install the project or its dependencies.
+## Step 1: Clone the Repository
+Run the following command to clone the project repository to your local machine:
 
-### Suggested Content
-Step-by-step instructions with commands, prerequisites, and environment setup.
+```
+git clone <repository_url>
+```
+Replace `<repository_url>` with the actual URL of the repository.
 
 ---
 
 # Usage
 
-## Purpose
-Explain how to use the project or software.
+The project consists of two main folders: `datasets` and `notebooks`.
 
-### Suggested Content
-Include code snippets, example commands, or screenshots that show the project in action.
+- **`datasets` Folder**: This folder contains the dataset required for training and experimenting with models. Ensure the dataset is properly set up before running the notebooks.
+
+- **`notebooks` Folder**: This folder contains Jupyter notebooks for experimenting with the data and training models. If you're looking to get started, we recommend exploring the modeling notebooks, where you can tweak parameters, train a model on the provided dataset, and evaluate its performance.
 
 ---
 
-# License
+# Technology
 
-## Purpose
-State the licensing under which the project is released.
-
-### Suggested Content
-A short statement about the license, typically linking to the full license file.
-
+### Tech Stack
+- VS Code (Jupyter Notebook Extension)
+- GitHub/Git
+- Python
+  - NumPy
+  - Pandas
+  - Matplotlib
+  - Seaborn
+  - Scikit-learn
+    
 ---
 
 # Credits and Acknowledgments
 
-## Purpose
-Acknowledge contributors or tools used in the project.
+### Contributers
+- Jawad Rada
+- Enrista Ilo
+- Ruth Velasquez
+- Samantha Quan
 
-### Suggested Content
-List team members, advisors, supporters, and libraries or third-party services used in the project.
+### Advisors
+- **AI Studio TA:** Saksham Mohan
+- **Challenge Advisor:** Omar Aboubakr
