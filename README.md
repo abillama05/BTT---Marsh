@@ -1,7 +1,7 @@
 # Hurricane Impacts on Shipping Lanes and Vessels
 Marsh McLennan AI Studio Project for Break Through Tech
 
-# Purpose
+## Purpose
 
 This project aims to predict the impact of hurricanes on vessel traffic along the US East Coast, with a focus on understanding how hurricanes influence vessel behavior and port closures. By linking vessel routes to hurricane paths and identifying disruptions, the project provides valuable insights for supply chain resilience. The ultimate goal is to help stakeholders, such as manufacturers and retailers, plan for and mitigate the effects of hurricanes on critical cargo shipments.
 
